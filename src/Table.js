@@ -1,45 +1,45 @@
 import React, { Component } from 'react';
 
-const TableHeader = ()=>{
+ const TableHeader = ()=>{
     return(
-        <thead>
-            <tr>
+<thead>
+              <tr>
                 <th>Name</th>
                 <th>Job</th>
-            </tr>
-
-        </thead>
+  
+              </tr>
+            </thead>
     )
 }
 
-const TableBody =props=>{
-    const rows = props.tableBodyProp.map((row,index)=>{
-        return(
-            <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
-            </tr>
-        )
-
+const TableBody = (props)=>{
+    const rows = props.characterData.map((row,index)=>{
+     return(
+         <tr key={index}>
+             <td>{row.name}</td>
+             <td>{row.job}</td>
+         </tr>
+     )
     })
-    return(
-        <tbody>{rows}</tbody>
-    )
+    
+    return <tbody>{rows}</tbody>
+    
 }
-
-
 
 class Table extends Component{
     render(){
-        const { characterData } = this.props;
+        const {characterData} = this.props;
         return(
             <table>
-           <TableHeader/>
-           <TableBody tableBodyProp={characterData} />
-           </table>
-         
-        );
+            <TableHeader/>
+            <TableBody characterData = {characterData}/>
+          </table>
+        
+        )
     }
+
 }
 
 export default Table;
+//import this class in App.js
+//split the table in 2 functions TableHeader & TableBody
