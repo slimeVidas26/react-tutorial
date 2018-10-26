@@ -3,22 +3,6 @@ import './App.css';
 import Table from './Table.js';
 
 class App extends Component {
-  state = {
-     characters:[
-      {
-        'name':'John',
-        'job':'Lawyer'
-         },
-       {
-         'name':' Ellen',
-         'job':'Designer'
-       },
-       {
-         'name':'Simon',
-         'job':'Programmer'
-       }
-     ]
-  }
   render() {
     const characters = [
       {
