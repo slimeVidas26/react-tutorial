@@ -6,6 +6,7 @@ import React, { Component } from 'react';
               <tr>
                 <th>Name</th>
                 <th>Job</th>
+                
   
               </tr>
             </thead>

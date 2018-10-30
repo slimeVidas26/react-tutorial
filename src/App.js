@@ -1,52 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 import Table from './Table.js';
+import Comment from './comment.js';
+
+const comment = {
+  date: new Date(),
+  text:'I hope you enjoy learning react!',
+  author:{
+      name:'Hello Kitty',
+      avatarUrl:'https://placekitten.com/g/64/64'
+  }
+}
 
 class App extends Component {
-
-  state = {
-   characters : [
-    {
-      'name':'John',
-      'job':'Lawyer'
-       },
-     {
-       'name':' Ellen',
-       'job':'Designer'
-     },
-     {
-       'name':'Simon',
-       'job':'Programmer'
-     }
-   ]
-  }
-
-  removeCharacter = (index)=>{
-   
-    const {characters} = this.state;
-    //console.log(characters)
-    this.setState({
-      characters:characters.filter((character,i)=>{
-        return i!==index;
-      })
-    })
-  }
   render() {
-    const {characters} = this.state;
-      
-    
     return (
       <div className="container">
-        <Table
-         characterData = {characters}
-         removeCharacter = {this.removeCharacter}
-         />
+       <Comment
+       author = {comment.author}
+       text = {comment.text}
+        date={comment.date}
+       />
       </div>
     );
   }
 }
 
 export default App;
-//remove the table element and paste it to new file called Table.js
-//create Table.js and open it
-//replace the contain of body table using props
+
