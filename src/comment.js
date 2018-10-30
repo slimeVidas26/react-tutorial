@@ -4,20 +4,32 @@ function formatDate(date){
     return date.toLocaleDateString();
 }
 
+function Avatar(props){
+    return(
+            <img className = "Avatar"
+            src = {props.user.avatarUrl}
+            alt = {props.user.name}/>
+    )
+}
+
+function InfoUser(props){
+    return(
+            <div className = "InfoUser">
+                {/* here goes Avatar */}
+                 <Avatar user = {props.user}/>
+
+                <div className ="UserName">
+                {props.user.name}
+                </div>
+            </div>
+    )
+}
+
 const Comment = (props)=>{
     //return infoUser text date
     return (
         <div className = "Comment">
-            <div className = "InfoUser">
-                <div className = "Avatar">
-                    <img src = {props.author.avatarUrl}
-                    alt = {props.author.name}/>
-
-                </div>
-                <div className ="UserName">
-                {props.author.name}
-                </div>
-            </div>
+           <InfoUser user = {props.author}/>
             <div className = "Comment-text">
             {props.text}
             </div>
